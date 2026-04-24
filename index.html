@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es" class="scroll-smooth scroll-pt-16 lg:scroll-pt-0">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,11 +25,27 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-amber-300 selection:text-slate-900">
 
+    <!-- Barra superior móvil -->
+    <div class="lg:hidden sticky top-0 z-30 bg-slate-900 text-white p-4 flex justify-between items-center shadow-md">
+        <h2 class="text-amber-400 font-black truncate text-lg">🌟 GDD Luciérnagas</h2>
+        <button id="menu-btn" class="p-2 focus:outline-none focus:ring-2 focus:ring-amber-400 rounded">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </div>
+
+    <!-- Capa oscura de fondo para el menú móvil -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-slate-900/50 z-30 hidden lg:hidden backdrop-blur-sm transition-opacity opacity-0 duration-300"></div>
+
     <!-- Sidebar / Índice -->
-    <aside class="fixed top-0 left-0 h-screen w-72 bg-slate-900 text-slate-300 p-6 overflow-y-auto hidden lg:block shadow-xl z-20">
-        <div class="mb-8">
-            <h2 class="text-amber-400 text-xl font-black mb-2 leading-tight">🌟 EL FESTIVAL DE LAS LUCIÉRNAGAS</h2>
-            <p class="text-xs uppercase tracking-wider font-semibold text-slate-500">GDD • Versión Maestra</p>
+    <aside id="sidebar" class="fixed top-0 left-0 h-screen w-72 bg-slate-900 text-slate-300 p-6 overflow-y-auto shadow-xl z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300">
+        <div class="flex justify-between items-start mb-8">
+            <div>
+                <h2 class="text-amber-400 text-xl font-black mb-2 leading-tight">🌟 EL FESTIVAL DE LAS LUCIÉRNAGAS</h2>
+                <p class="text-xs uppercase tracking-wider font-semibold text-slate-500">GDD • Versión Maestra</p>
+            </div>
+            <button id="close-sidebar-btn" class="lg:hidden text-slate-400 hover:text-white p-1">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
         </div>
         <nav class="space-y-6 text-sm">
             <div>
@@ -1290,6 +1306,42 @@
         </section>
 
     </main>
+
+    <!-- Script para controlar el menú en móviles -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-sidebar-btn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+        const sidebarLinks = sidebar.querySelectorAll('a');
+
+        function openSidebar() {
+            sidebar.classList.remove('-translate-x-full');
+            overlay.classList.remove('hidden');
+            setTimeout(() => overlay.classList.remove('opacity-0'), 10);
+            document.body.classList.add('overflow-hidden'); // Evita que el fondo haga scroll
+        }
+
+        function closeSidebar() {
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.add('opacity-0');
+            setTimeout(() => overlay.classList.add('hidden'), 300);
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        menuBtn.addEventListener('click', openSidebar);
+        closeBtn.addEventListener('click', closeSidebar);
+        overlay.addEventListener('click', closeSidebar);
+
+        // Cierra el menú automáticamente al tocar un enlace en el móvil
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 1024) { // Menor que pantallas de escritorio
+                    closeSidebar();
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
