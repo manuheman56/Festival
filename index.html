@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth scroll-pt-20 lg:scroll-pt-0">
+<html lang="es" class="scroll-smooth scroll-pt-24 lg:scroll-pt-10">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>GDD - El Festival de las Luciérnagas</title>
-    <!-- Tailwind CSS (Carga ultrarrápida) -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap');
@@ -18,8 +18,8 @@
         
         /* Tablas adaptables */
         table { border-collapse: collapse; width: 100%; margin-bottom: 1.5rem; background: white; border-radius: 0.5rem; overflow: hidden; box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1); }
-        th { background-color: #1e293b; color: white; text-align: left; padding: 0.75rem 1rem; font-weight: 600; }
-        td { padding: 0.75rem 1rem; border-bottom: 1px solid #e2e8f0; }
+        th { background-color: #1e293b; color: white; text-align: left; padding: 0.75rem 1rem; font-weight: 600; font-size: 0.875rem; }
+        td { padding: 0.75rem 1rem; border-bottom: 1px solid #e2e8f0; font-size: 0.875rem; vertical-align: top; }
         tr:last-child td { border-bottom: none; }
         tr:nth-child(even) { background-color: #f8fafc; }
 
@@ -31,15 +31,11 @@
 
     <!-- ================= PORTADA (APP SPLASH SCREEN) ================= -->
     <div id="splash-screen" class="fixed inset-0 z-50 bg-slate-900 flex flex-col items-center justify-center">
-        <!-- Efecto de luz de fondo -->
         <div class="absolute w-64 h-64 bg-amber-500 rounded-full blur-[100px] opacity-20 animate-pulse"></div>
-        
-        <!-- Contenido Portada -->
         <div class="relative z-10 text-center px-6">
             <div class="text-6xl md:text-8xl mb-6 transform hover:scale-110 transition-transform duration-500">🌟</div>
             <h1 class="text-3xl md:text-6xl text-white font-black leading-tight mb-2">El Festival de las<br><span class="text-amber-400">Luciérnagas</span></h1>
-            <p class="text-slate-400 mt-4 tracking-widest text-xs md:text-sm uppercase font-bold border-t border-slate-700 pt-4 inline-block">Game Design Document</p>
-            
+            <p class="text-slate-400 mt-4 tracking-widest text-xs md:text-sm uppercase font-bold border-t border-slate-700 pt-4 inline-block">GDD Oficial • Versión Íntegra</p>
             <button id="enter-btn" class="mt-12 w-full md:w-auto px-10 py-4 bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold rounded-full transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(245,158,11,0.4)] text-lg flex items-center justify-center gap-2 mx-auto">
                 Abrir Documento
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
@@ -48,7 +44,7 @@
     </div>
 
     <!-- ================= BARRA NAVEGACIÓN MÓVIL ================= -->
-    <div class="lg:hidden sticky top-0 z-30 bg-slate-900 text-white p-4 flex justify-between items-center shadow-md">
+    <div class="lg:hidden sticky top-0 z-30 bg-slate-900 text-white p-4 flex justify-between items-center shadow-md border-b border-slate-800">
         <div class="flex items-center gap-2">
             <span class="text-xl">🌟</span>
             <h2 class="text-amber-400 font-black truncate text-lg">GDD Luciérnagas</h2>
@@ -66,7 +62,7 @@
         <div class="flex justify-between items-start mb-8">
             <div>
                 <h2 class="text-amber-400 text-xl font-black mb-2 leading-tight">🌟 EL FESTIVAL DE LAS LUCIÉRNAGAS</h2>
-                <p class="text-xs uppercase tracking-wider font-semibold text-slate-500">GDD • Versión Maestra</p>
+                <p class="text-[10px] uppercase tracking-wider font-semibold text-slate-500">Documento Maestro</p>
             </div>
             <button id="close-sidebar-btn" class="lg:hidden text-slate-400 hover:text-white p-2 bg-slate-800 rounded-full">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -76,45 +72,48 @@
             <div>
                 <a href="#bloque1" class="font-bold text-slate-100 hover:text-amber-400 block mb-2 transition-colors">1. FUNDAMENTOS Y CORE</a>
                 <ul class="space-y-2 pl-4 border-l border-slate-700 text-slate-400">
-                    <li><a href="#1-1" class="hover:text-amber-300 transition-colors block py-1">1.1 Concepto de alto nivel</a></li>
-                    <li><a href="#1-2" class="hover:text-amber-300 transition-colors block py-1">1.2 Pilares de diseño</a></li>
-                    <li><a href="#1-6" class="hover:text-amber-300 transition-colors block py-1">1.6 Glosario Crítico</a></li>
-                    <li><a href="#1-7" class="hover:text-amber-300 transition-colors block py-1">1.7 Interconexión</a></li>
+                    <li><a href="#1-1" class="hover:text-amber-300 block">1.1 Concepto de alto nivel</a></li>
+                    <li><a href="#1-2" class="hover:text-amber-300 block">1.2 Pilares de diseño</a></li>
+                    <li><a href="#1-6" class="hover:text-amber-300 block">1.6 Glosario (Crítico)</a></li>
+                    <li><a href="#1-7" class="hover:text-amber-300 block">1.7 Interconexión de Sistemas</a></li>
+                    <li><a href="#1-9" class="hover:text-amber-300 block">1.9 Balance y Decisiones</a></li>
                 </ul>
             </div>
             <div>
                 <a href="#bloque2" class="font-bold text-slate-100 hover:text-amber-400 block mb-2 transition-colors">2. COMPONENTES</a>
                 <ul class="space-y-2 pl-4 border-l border-slate-700 text-slate-400">
-                    <li><a href="#2-1" class="hover:text-amber-300 transition-colors block py-1">2.1 Tablero Central</a></li>
-                    <li><a href="#2-2" class="hover:text-amber-300 transition-colors block py-1">2.2 Tableros Personales</a></li>
-                    <li><a href="#2-3" class="hover:text-amber-300 transition-colors block py-1">2.3 Faroles y Luciérnagas</a></li>
-                    <li><a href="#2-5" class="hover:text-amber-300 transition-colors block py-1">2.5 Cartas</a></li>
+                    <li><a href="#2-1" class="hover:text-amber-300 block">2.1 Tablero Central (Track/Reina)</a></li>
+                    <li><a href="#2-2" class="hover:text-amber-300 block">2.2 Tableros Personales</a></li>
+                    <li><a href="#2-3" class="hover:text-amber-300 block">2.3 Faroles y Luciérnagas</a></li>
+                    <li><a href="#2-5" class="hover:text-amber-300 block">2.5 Tipos de Cartas</a></li>
                 </ul>
             </div>
             <div>
                 <a href="#bloque3" class="font-bold text-slate-100 hover:text-amber-400 block mb-2 transition-colors">3. SISTEMAS Y MECÁNICAS</a>
                 <ul class="space-y-2 pl-4 border-l border-slate-700 text-slate-400">
-                    <li><a href="#3-1" class="hover:text-amber-300 transition-colors block py-1">3.1 Flujo Completo</a></li>
-                    <li><a href="#3-2" class="hover:text-amber-300 transition-colors block py-1">3.2 Sistema de PA</a></li>
-                    <li><a href="#3-5" class="hover:text-amber-300 transition-colors block py-1">3.5 Patrones y Reina</a></li>
-                    <li><a href="#3-11" class="hover:text-amber-300 transition-colors block py-1">3.11 Casuística</a></li>
+                    <li><a href="#3-0" class="hover:text-amber-300 block font-bold text-amber-200">3.0 Preparación (Setup)</a></li>
+                    <li><a href="#3-1" class="hover:text-amber-300 block">3.1 Flujo Completo / Loop</a></li>
+                    <li><a href="#3-2" class="hover:text-amber-300 block">3.2 Acciones (PA) y Faroles</a></li>
+                    <li><a href="#3-4" class="hover:text-amber-300 block">3.4 Movimiento de Luciérnagas</a></li>
+                    <li><a href="#3-7" class="hover:text-amber-300 block">3.7 Sistema de la Reina</a></li>
+                    <li><a href="#3-11" class="hover:text-amber-300 block">3.11 Casuística de Conflictos</a></li>
                 </ul>
             </div>
             <div>
                 <a href="#bloque4" class="font-bold text-slate-100 hover:text-amber-400 block mb-2 transition-colors">4. BASE DE DATOS</a>
                 <ul class="space-y-2 pl-4 border-l border-slate-700 text-slate-400">
-                    <li><a href="#4-1" class="hover:text-amber-300 transition-colors block py-1">4.1 Balance de Juego</a></li>
-                    <li><a href="#4-2" class="hover:text-amber-300 transition-colors block py-1">4.2 Patrones Individual</a></li>
-                    <li><a href="#4-3" class="hover:text-amber-300 transition-colors block py-1">4.3 Patrones Grupales</a></li>
-                    <li><a href="#4-4" class="hover:text-amber-300 transition-colors block py-1">4.4 Rituales y Objetivos</a></li>
+                    <li><a href="#4-2" class="hover:text-amber-300 block">4.2 Patrones Individuales</a></li>
+                    <li><a href="#4-3" class="hover:text-amber-300 block">4.3 Patrones Grupales</a></li>
+                    <li><a href="#4-4" class="hover:text-amber-300 block">4.4 Rituales y Cartas de Inicio</a></li>
+                    <li><a href="#4-6" class="hover:text-amber-300 block">4.6 Objetivos Secretos</a></li>
                 </ul>
             </div>
             <div>
                 <a href="#bloque5" class="font-bold text-slate-100 hover:text-amber-400 block mb-2 transition-colors">5. REFERENCIA RÁPIDA</a>
                 <ul class="space-y-2 pl-4 border-l border-slate-700 text-slate-400">
-                    <li><a href="#5-1" class="hover:text-amber-300 transition-colors block py-1">5.1 Resumen Visual</a></li>
-                    <li><a href="#5-4" class="hover:text-amber-300 transition-colors block py-1">5.4 Resolución Patrones</a></li>
-                    <li><a href="#5-10" class="hover:text-amber-300 transition-colors block py-1">5.10 Puntuación</a></li>
+                    <li><a href="#5-2" class="hover:text-amber-300 block">5.2 Tabla de Acciones</a></li>
+                    <li><a href="#5-4" class="hover:text-amber-300 block">5.4 Validación de Patrones</a></li>
+                    <li><a href="#5-10" class="hover:text-amber-300 block">5.10 Puntuación y Cierre</a></li>
                 </ul>
             </div>
         </nav>
@@ -123,17 +122,17 @@
     <!-- ================= CONTENIDO PRINCIPAL ================= -->
     <main class="lg:ml-72 p-4 md:p-10 max-w-5xl mx-auto">
         
-        <!-- Header de la primera página -->
+        <!-- HEADER PÁGINA -->
         <header class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-8 md:p-16 mb-12 shadow-xl relative overflow-hidden mt-4 lg:mt-0">
             <div class="absolute top-0 right-0 p-8 opacity-10 text-8xl md:text-9xl pointer-events-none">🌟</div>
             <div class="relative z-10">
                 <span class="bg-amber-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-6 inline-block shadow-sm">GDD Oficial</span>
                 <h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-4">El Festival de las Luciérnagas</h1>
-                <p class="text-lg text-slate-400 font-medium tracking-wide border-l-2 border-amber-400 pl-3">VERSIÓN MAESTRA</p>
+                <p class="text-lg text-slate-400 font-medium tracking-wide border-l-2 border-amber-400 pl-3">VERSIÓN MAESTRA ÍNTEGRA</p>
             </div>
         </header>
 
-        <!-- BLOQUE 1: FUNDAMENTOS -->
+        <!-- ================= BLOQUE 1 ================= -->
         <section id="bloque1" class="mb-20">
             <div class="flex items-center gap-4 mb-8">
                 <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center text-2xl border-2 border-amber-400 text-amber-600 font-black">1</div>
@@ -164,38 +163,53 @@
                 
                 <div class="grid md:grid-cols-2 gap-4 md:gap-6">
                     <div class="bg-indigo-50 p-5 rounded-xl border border-indigo-100">
-                        <h4 class="font-bold text-indigo-900 mb-2 flex items-center gap-2">🧠 1: Claridad Espacial</h4>
+                        <h4 class="font-bold text-indigo-900 mb-2">🧠 1: Claridad Espacial</h4>
                         <p class="text-sm text-indigo-800 mb-3">El jugador debe visualizar patrones, entender conexiones sin ambigüedad y anticipar movimientos.</p>
-                        <div class="bg-white/60 p-2 rounded text-xs text-indigo-900 font-semibold border border-indigo-200">
-                            👉 Máximo 12 nodos, conexiones fijas.
-                        </div>
+                        <p class="bg-white/60 p-2 rounded text-xs text-indigo-900 font-semibold border border-indigo-200">👉 Máximo 12 nodos, conexiones fijas.</p>
                     </div>
-
                     <div class="bg-amber-50 p-5 rounded-xl border border-amber-100">
-                        <h4 class="font-bold text-amber-900 mb-2 flex items-center gap-2">⚖️ 2: Decisión vs Eficiencia</h4>
+                        <h4 class="font-bold text-amber-900 mb-2">⚖️ 2: Decisión vs Eficiencia</h4>
                         <p class="text-sm text-amber-800 mb-3">Cada turno es optimización: "¿Dónde invierto mis 3 PA para mayor impacto?"</p>
-                        <div class="bg-white/60 p-2 rounded text-xs text-amber-900 font-semibold border border-amber-200">
-                            👉 No hay azar dominante, todo tiene coste.
-                        </div>
+                        <p class="bg-white/60 p-2 rounded text-xs text-amber-900 font-semibold border border-amber-200">👉 No hay azar dominante, todo tiene coste.</p>
                     </div>
-
                     <div class="bg-emerald-50 p-5 rounded-xl border border-emerald-100">
-                        <h4 class="font-bold text-emerald-900 mb-2 flex items-center gap-2">🔄 3: Interacción Indirecta</h4>
-                        <p class="text-sm text-emerald-800 mb-3">Interacción mediante manipulación de luciérnagas, bloqueo de nodos y alteración de patrones.</p>
+                        <h4 class="font-bold text-emerald-900 mb-2">🔄 3: Interacción Indirecta</h4>
+                        <p class="text-sm text-emerald-800 mb-3">Interacción mediante manipulación de luciérnagas, bloqueo de nodos y alteración de patrones. Evita frustración directa.</p>
                     </div>
-
                     <div class="bg-rose-50 p-5 rounded-xl border border-rose-100">
-                        <h4 class="font-bold text-rose-900 mb-2 flex items-center gap-2">🌈 4: Gestión de Colores</h4>
+                        <h4 class="font-bold text-rose-900 mb-2">🌈 4: Gestión de Colores</h4>
                         <p class="text-sm text-rose-800 mb-3">Los colores no son estéticos. Son una capa estratégica que afectan patrones y control del tablero.</p>
                     </div>
-
                     <div class="bg-purple-900 text-white p-6 rounded-xl md:col-span-2 shadow-md relative overflow-hidden">
                         <div class="absolute right-0 bottom-0 opacity-10 text-6xl transform translate-x-4 translate-y-4">👑</div>
-                        <h4 class="font-bold text-purple-200 mb-2 flex items-center gap-2 text-lg">👑 Pilar 5: Control del Ritmo (Reina)</h4>
+                        <h4 class="font-bold text-purple-200 mb-2 text-lg">👑 5: Control del Ritmo (Reina)</h4>
                         <p class="text-sm text-purple-100">La Reina es el temporizador dinámico del juego. Funciones: acelerar partida, introducir caos y romper estrategias dominantes.</p>
                     </div>
                 </div>
             </article>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-10">
+                <article id="1-3">
+                    <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4 flex items-center"><span class="bg-slate-200 text-slate-600 px-2 py-1 rounded text-sm mr-3">1.3</span> EXPERIENCIA BUSCADA</h3>
+                    <table class="text-sm">
+                        <thead><tr><th>Momento</th><th>Sensación</th></tr></thead>
+                        <tbody>
+                            <tr><td>Inicio</td><td>Exploración y planificación</td></tr>
+                            <tr><td>Medio juego</td><td>Optimización y tensión</td></tr>
+                            <tr><td>Final</td><td>Carrera estratégica y cierre táctico</td></tr>
+                        </tbody>
+                    </table>
+                </article>
+                <article id="1-4">
+                    <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4 flex items-center"><span class="bg-slate-200 text-slate-600 px-2 py-1 rounded text-sm mr-3">1.4</span> ADN MECÁNICO</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-slate-700 bg-white p-6 rounded-xl shadow-sm border border-slate-200 text-sm">
+                        <li>Colocación espacial (tipo puzzle)</li>
+                        <li>Gestión de acciones (PA)</li>
+                        <li>Engine building ligero</li>
+                        <li>Control de área personal</li>
+                    </ul>
+                </article>
+            </div>
 
             <article id="1-6" class="mb-10">
                 <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4 flex items-center"><span class="bg-slate-200 text-slate-600 px-2 py-1 rounded text-sm mr-3">1.6</span> GLOSARIO DE TÉRMINOS (CRÍTICO)</h3>
@@ -203,69 +217,104 @@
                     <span class="text-xl mt-0.5">⚠️</span>
                     <p class="text-sm font-semibold">Aquí no hay ambigüedad. Cada término del glosario actúa como una regla fundamental del juego.</p>
                 </div>
-
-                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <div class="bg-white p-4 border border-slate-200 rounded shadow-sm"><strong class="text-slate-800 block mb-1">🔹 Nodo</strong><p class="text-xs text-slate-600">Espacio del tablero donde colocar faroles.</p></div>
-                    <div class="bg-white p-4 border border-slate-200 rounded shadow-sm"><strong class="text-slate-800 block mb-1">🔹 Conexión</strong><p class="text-xs text-slate-600">Relación física entre nodos. Permite movimiento.</p></div>
-                    <div class="bg-white p-4 border border-slate-200 rounded shadow-sm"><strong class="text-slate-800 block mb-1">🔹 Luciérnaga</strong><p class="text-xs text-slate-600">Unidad de energía. Máx 1 por nodo activo.</p></div>
-                    <div class="bg-white p-4 border border-slate-200 rounded shadow-sm"><strong class="text-slate-800 block mb-1">🔹 Nodo Activo</strong><p class="text-xs text-slate-600">Debe tener: 1 farol + 1 luciérnaga.</p></div>
-                    <div class="bg-white p-4 border border-slate-200 rounded shadow-sm"><strong class="text-slate-800 block mb-1">🔹 Punto Acción (PA)</strong><p class="text-xs text-slate-600">Base del turno (3 PA iniciales).</p></div>
-                    <div class="bg-white p-4 border border-slate-200 rounded shadow-sm"><strong class="text-slate-800 block mb-1">🔹 Patrón</strong><p class="text-xs text-slate-600">Configuración que otorga puntos/efecto.</p></div>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="bg-white p-4 border border-slate-200 rounded shadow-sm"><strong class="text-slate-800 block mb-1">🔹 Nodo</strong><p class="text-xs text-slate-600">Espacio del tablero personal donde se pueden colocar faroles.</p></div>
+                    <div class="bg-white p-4 border border-slate-200 rounded shadow-sm"><strong class="text-slate-800 block mb-1">🔹 Conexión</strong><p class="text-xs text-slate-600">Relación física entre nodos. Dos nodos conectados permiten movimiento de luciérnagas y formación de patrones.</p></div>
+                    <div class="bg-white p-4 border border-slate-200 rounded shadow-sm"><strong class="text-slate-800 block mb-1">🔹 Farol</strong><p class="text-xs text-slate-600">Elemento estructural apilable. Nivel 1 (Base), Nivel 2 (Intermedio), Nivel 3 (Completo e Inmune).</p></div>
+                    <div class="bg-white p-4 border border-slate-200 rounded shadow-sm"><strong class="text-slate-800 block mb-1">🔹 Luciérnaga</strong><p class="text-xs text-slate-600">Unidad de energía. Reglas: solo 1 por nodo, se mueve entre nodos conectados.</p></div>
+                    <div class="bg-white p-4 border border-slate-200 rounded shadow-sm"><strong class="text-slate-800 block mb-1">🔹 Nodo Activo</strong><p class="text-xs text-slate-600">Nodo que cumple: tiene farol + tiene luciérnaga. Condición para la mayoría de patrones.</p></div>
+                    <div class="bg-white p-4 border border-slate-200 rounded shadow-sm"><strong class="text-slate-800 block mb-1">🔹 Punto de Acción (PA)</strong><p class="text-xs text-slate-600">Unidad básica de acción. Base de turno = 3 PA.</p></div>
+                    <div class="bg-white p-4 border border-slate-200 rounded shadow-sm"><strong class="text-slate-800 block mb-1">🔹 Cristal Mágico</strong><p class="text-xs text-slate-600">Recurso flexible. 1= +1 PA, 2= Subir farol, 3= Cambiar color.</p></div>
+                    <div class="bg-white p-4 border border-slate-200 rounded shadow-sm"><strong class="text-slate-800 block mb-1">🔹 Patrón Individual / Grupal</strong><p class="text-xs text-slate-600">Individual: persistente (1 vez/jugador). Grupal: competitivo, se consume.</p></div>
                 </div>
             </article>
 
             <article id="1-7" class="mb-10">
                 <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4 flex items-center"><span class="bg-slate-200 text-slate-600 px-2 py-1 rounded text-sm mr-3">1.7</span> INTERCONEXIÓN DE SISTEMAS</h3>
-                <div class="bg-slate-100 p-6 rounded-xl border border-slate-200 flex flex-col md:flex-row gap-6 items-center">
-                    <div class="flex-1 space-y-4">
-                        <div class="flex items-center gap-3"><span class="text-xl">🏮</span><p class="text-sm font-semibold">Faroles necesitan luciérnagas, luciérnagas necesitan faroles.</p></div>
-                        <div class="flex items-center gap-3"><span class="text-xl">🧩</span><p class="text-sm font-semibold">Patrones requieren luciérnagas para formarse.</p></div>
-                        <div class="flex items-center gap-3"><span class="text-xl">👑</span><p class="text-sm font-semibold">Patrones completados aceleran el paso de la Reina.</p></div>
-                        <div class="flex items-center gap-3"><span class="text-xl">💎</span><p class="text-sm font-semibold">Cristales rompen las reglas normales de eficiencia (PA).</p></div>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="bg-slate-50 p-4 border border-slate-200 rounded-lg">
+                        <strong class="text-slate-800 block mb-2 text-sm">FAROLES ↔ LUCIÉRNAGAS</strong>
+                        <ul class="text-xs text-slate-600 list-disc pl-4 space-y-1">
+                            <li>No puedes subir farol si hay luciérnaga encima.</li>
+                            <li>Necesitas construir un farol para colocar luciérnaga.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-50 p-4 border border-slate-200 rounded-lg">
+                        <strong class="text-slate-800 block mb-2 text-sm">LUCIÉRNAGAS ↔ PATRONES</strong>
+                        <ul class="text-xs text-slate-600 list-disc pl-4 space-y-1">
+                            <li>Sin luciérnagas no hay patrón.</li>
+                            <li>El color define el patrón.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-50 p-4 border border-slate-200 rounded-lg">
+                        <strong class="text-slate-800 block mb-2 text-sm">PATRONES ↔ REINA</strong>
+                        <p class="text-xs text-slate-600">Completar un patrón acelera el movimiento de la Reina, reduciendo el tiempo de partida.</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 border border-slate-200 rounded-lg">
+                        <strong class="text-slate-800 block mb-2 text-sm">CRISTALES ↔ EFICIENCIA</strong>
+                        <p class="text-xs text-slate-600">Permiten romper la limitación estricta de los PA en turnos críticos.</p>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="1-9" class="mb-10">
+                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4 flex items-center"><span class="bg-slate-200 text-slate-600 px-2 py-1 rounded text-sm mr-3">1.9</span> BALANCE Y DECISIONES CLAVE</h3>
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="flex-1 bg-white p-5 border border-slate-200 rounded-lg">
+                        <p class="text-sm text-slate-600 mb-3"><strong>Límite de 3 PA:</strong> Mantiene la tensión constante y evita turnos infinitos.</p>
+                        <p class="text-sm text-slate-600 mb-3"><strong>Nivel 3 Inmune:</strong> Crea un objetivo claro y seguro contra el caos de la Reina.</p>
+                        <p class="text-sm text-slate-600"><strong>Máx 2 Patrones/turno:</strong> Evita "combos rotos" de puntuación masiva repentina.</p>
+                    </div>
+                    <div class="bg-indigo-900 text-indigo-100 p-6 rounded-xl text-center shadow-inner flex flex-col justify-center">
+                        <p class="font-mono text-base mb-2">Valor Turno ≈ 2–4 PV</p>
+                        <p class="font-mono text-base mb-2">Partida Completa ≈ 60 PV</p>
+                        <p class="text-amber-400 font-bold text-xs mt-2">Evita explosiones de puntuación</p>
                     </div>
                 </div>
             </article>
         </section>
 
-        <!-- BLOQUE 2: COMPONENTES -->
+        <!-- ================= BLOQUE 2 ================= -->
         <section id="bloque2" class="mb-20">
             <div class="flex items-center gap-4 mb-8">
                 <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center text-2xl border-2 border-indigo-400 text-indigo-600 font-black">2</div>
-                <h2 class="text-2xl md:text-3xl font-black text-slate-900">COMPONENTES (BASE DE DATOS)</h2>
+                <h2 class="text-2xl md:text-3xl font-black text-slate-900">COMPONENTES</h2>
             </div>
 
-            <article id="2-1" class="mb-10">
-                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4">2.1 TABLERO CENTRAL</h3>
+            <article id="2-1" class="mb-12">
+                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4"><span class="bg-slate-200 text-slate-600 px-2 py-1 rounded text-sm mr-3">2.1</span> TABLERO CENTRAL</h3>
+                <p class="text-slate-600 mb-4 text-sm">El tablero central está dividido en 2 zonas funcionales independientes:</p>
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                        <div class="bg-blue-900 text-white p-3 text-center font-bold tracking-wider text-sm">TRACK DE PUNTUACIÓN</div>
+                        <div class="bg-blue-900 text-white p-3 text-center font-bold tracking-wider text-sm">TRACK DE PUNTUACIÓN (0-60)</div>
                         <div class="p-4 overflow-x-auto">
-                            <table class="text-xs md:text-sm !mb-0 min-w-full">
+                            <table class="text-xs md:text-sm !mb-0 min-w-[300px]">
                                 <thead><tr class="bg-blue-50 text-blue-900"><th class="!bg-blue-100">Casilla</th><th class="!bg-blue-100">Efecto Especial</th></tr></thead>
                                 <tbody>
-                                    <tr><td class="font-mono">5, 25</td><td>+1 cristal</td></tr>
-                                    <tr><td class="font-mono">10, 30</td><td>+1 PA inmediato</td></tr>
-                                    <tr><td class="font-mono">15</td><td>Reina avanza +1</td></tr>
-                                    <tr><td class="font-mono">20</td><td>repite última acción</td></tr>
-                                    <tr><td class="font-mono">35</td><td>eliges efecto</td></tr>
-                                    <tr class="bg-amber-50 font-bold"><td class="font-mono text-indigo-700">60</td><td class="text-indigo-700">activa final de partida</td></tr>
+                                    <tr><td class="font-bold">5, 25</td><td>+1 cristal</td></tr>
+                                    <tr><td class="font-bold">10, 30</td><td>+1 PA inmediato</td></tr>
+                                    <tr><td class="font-bold">15</td><td>Reina avanza +1</td></tr>
+                                    <tr><td class="font-bold">20</td><td>Eco (repite última acción)</td></tr>
+                                    <tr><td class="font-bold">35</td><td>Favor (eliges efecto)</td></tr>
+                                    <tr class="bg-amber-50 font-bold"><td class="font-mono text-indigo-700">60</td><td class="text-indigo-700">Activa final de partida</td></tr>
                                 </tbody>
                             </table>
+                            <p class="text-xs text-slate-500 mt-2 text-center italic">Los efectos se activan al caer EXACTAMENTE o al pasar.</p>
                         </div>
                     </div>
 
                     <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
                         <div class="bg-purple-900 text-white p-3 text-center font-bold tracking-wider text-sm">SENDERO DE LA REINA (12)</div>
                         <div class="p-4 overflow-x-auto">
-                            <table class="text-xs md:text-sm !mb-0 min-w-full">
-                                <thead><tr class="bg-purple-50 text-purple-900"><th class="!bg-purple-100">Casilla</th><th class="!bg-purple-100">Efecto / Tipo</th></tr></thead>
+                            <table class="text-xs md:text-sm !mb-0 min-w-[300px]">
+                                <thead><tr class="bg-purple-50 text-purple-900"><th class="!bg-purple-100">Casilla</th><th class="!bg-purple-100">Efecto al caer</th></tr></thead>
                                 <tbody>
-                                    <tr><td class="font-mono">1, 6, 11</td><td><strong class="text-purple-700">Ritual:</strong> robar carta ritual</td></tr>
-                                    <tr><td class="font-mono">2, 8</td><td><strong class="text-emerald-700">Crec:</strong> todos suben 1 nivel</td></tr>
-                                    <tr><td class="font-mono">3, 7</td><td><strong class="text-blue-600">Vuelo:</strong> mover luz gratis</td></tr>
-                                    <tr><td class="font-mono">4, 10</td><td><strong class="text-amber-600">Bend:</strong> +2 PV o 1 luz</td></tr>
-                                    <tr><td class="font-mono">5, 9</td><td><strong class="text-red-600">Caos:</strong> todos devuelven 1 luz</td></tr>
-                                    <tr><td class="font-mono">12</td><td><strong class="text-indigo-700">Favor:</strong> cualquier efecto</td></tr>
+                                    <tr><td class="font-bold text-purple-700">1, 6, 11</td><td><strong>Ritual:</strong> robar carta ritual</td></tr>
+                                    <tr><td class="font-bold text-emerald-700">2, 8</td><td><strong>Crecimiento:</strong> todos suben 1 nivel</td></tr>
+                                    <tr><td class="font-bold text-blue-600">3, 7</td><td><strong>Vuelo:</strong> mover luz gratis</td></tr>
+                                    <tr><td class="font-bold text-amber-600">4, 10</td><td><strong>Bendición:</strong> +2 PV o 1 luz</td></tr>
+                                    <tr><td class="font-bold text-red-600">5, 9</td><td><strong>Caos:</strong> todos devuelven 1 luz</td></tr>
+                                    <tr><td class="font-bold text-indigo-700">12</td><td><strong>Favor:</strong> cualquier efecto</td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -273,27 +322,24 @@
                 </div>
             </article>
 
-            <!-- TABLERO PERSONAL CON DIAGRAMA VISUAL -->
-            <article id="2-2" class="mb-10">
-                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4">2.2 TABLERO PERSONAL (Estructura y Nodos)</h3>
+            <article id="2-2" class="mb-12">
+                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4"><span class="bg-slate-200 text-slate-600 px-2 py-1 rounded text-sm mr-3">2.2</span> TABLEROS PERSONALES</h3>
                 <div class="bg-slate-100 p-5 md:p-8 rounded-xl border border-slate-200 grid md:grid-cols-2 gap-8 items-center">
                     <div>
-                        <strong class="block mb-2 text-slate-800 text-lg">🟩 Topología de Red</strong>
+                        <strong class="block mb-2 text-slate-800 text-lg">🟩 Estructura y Función</strong>
                         <ul class="list-disc pl-5 text-slate-700 text-sm space-y-2 mb-4">
-                            <li>El tablero consta de <strong>12 nodos</strong> físicos.</li>
-                            <li>Las conexiones (líneas) son fijas e inamovibles.</li>
-                            <li>Diseño semi-orgánico para permitir múltiples rutas (no es una cuadrícula perfecta).</li>
-                            <li>La posición condiciona qué patrones se pueden crear eficientemente.</li>
+                            <li>Cada tablero tiene <strong>12 nodos</strong> físicos.</li>
+                            <li>Conexiones fijas e inamovibles.</li>
+                            <li>Diseño semi-orgánico para permitir múltiples estrategias (no cuadriculado).</li>
+                            <li>Permite formación de geometría para los patrones individuales y grupales.</li>
                         </ul>
                     </div>
                     
                     <!-- Diagrama interactivo SVG -->
                     <div class="bg-slate-900 p-6 rounded-xl flex flex-col justify-center items-center relative shadow-[inset_0_4px_20px_rgba(0,0,0,0.5)] h-64 border-2 border-slate-800 overflow-hidden">
-                        <!-- Grid de fondo -->
                         <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 20px 20px;"></div>
-                        
                         <div class="relative w-full h-full max-w-[200px] max-h-[200px]">
-                            <!-- Líneas (Conexiones) -->
+                            <!-- Conexiones -->
                             <svg class="absolute inset-0 w-full h-full text-slate-600" style="z-index: 1;">
                                 <line x1="20%" y1="20%" x2="50%" y2="10%" stroke="currentColor" stroke-width="3" stroke-dasharray="4"/>
                                 <line x1="50%" y1="10%" x2="80%" y2="20%" stroke="currentColor" stroke-width="3"/>
@@ -309,7 +355,6 @@
                             <div class="absolute w-5 h-5 bg-slate-800 border-2 border-slate-500 rounded-full z-10 top-[10%] left-[50%] -translate-x-1/2 -translate-y-1/2"></div>
                             <div class="absolute w-5 h-5 bg-slate-800 border-2 border-slate-500 rounded-full z-10 top-[20%] left-[80%] -translate-x-1/2 -translate-y-1/2"></div>
                             <div class="absolute w-6 h-6 bg-slate-800 border-2 border-emerald-400 rounded-full z-10 top-[50%] left-[20%] -translate-x-1/2 -translate-y-1/2 shadow-[0_0_15px_rgba(52,211,153,0.8)]"></div>
-                            <!-- Nodo Central Nivel 3 -->
                             <div class="absolute w-8 h-8 bg-slate-900 border-[3px] border-indigo-400 rounded-full z-10 top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 flex items-center justify-center shadow-[0_0_20px_rgba(129,140,248,0.9)] animate-pulse"><span class="text-[10px]">🏮</span></div>
                             <div class="absolute w-5 h-5 bg-slate-800 border-2 border-slate-500 rounded-full z-10 top-[50%] left-[80%] -translate-x-1/2 -translate-y-1/2"></div>
                             <div class="absolute w-6 h-6 bg-slate-800 border-2 border-rose-400 rounded-full z-10 top-[80%] left-[50%] -translate-x-1/2 -translate-y-1/2 shadow-[0_0_15px_rgba(251,113,133,0.8)]"></div>
@@ -318,168 +363,275 @@
                 </div>
             </article>
 
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <article id="2-3">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4"><span class="bg-slate-200 text-slate-600 px-2 py-1 rounded text-sm mr-3">2.3</span> FAROLES</h3>
+                    <table class="text-sm">
+                        <thead><tr><th>Nivel</th><th>Estado</th><th>Propiedades</th></tr></thead>
+                        <tbody>
+                            <tr><td>1</td><td>Base</td><td>Permite colocar luz</td></tr>
+                            <tr><td>2</td><td>Mejorado</td><td>Requisito de ciertos patrones</td></tr>
+                            <tr class="bg-amber-50"><td class="font-bold text-amber-700">3</td><td class="font-bold text-amber-700">Completo</td><td class="font-bold text-amber-700">Inmune a reducciones</td></tr>
+                        </tbody>
+                    </table>
+                </article>
+                <article id="2-4">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4"><span class="bg-slate-200 text-slate-600 px-2 py-1 rounded text-sm mr-3">2.4</span> LUCIÉRNAGAS</h3>
+                    <div class="bg-white p-4 rounded border border-slate-200">
+                        <p class="text-sm text-slate-700 mb-3">Total: 48 luciérnagas (8 de cada color).</p>
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="bg-red-500 text-white px-2 py-1 rounded text-xs font-bold">Rojo</span>
+                            <span class="bg-blue-500 text-white px-2 py-1 rounded text-xs font-bold">Azul</span>
+                            <span class="bg-green-500 text-white px-2 py-1 rounded text-xs font-bold">Verde</span>
+                            <span class="bg-yellow-400 text-slate-900 px-2 py-1 rounded text-xs font-bold">Amarillo</span>
+                            <span class="bg-purple-500 text-white px-2 py-1 rounded text-xs font-bold">Violeta</span>
+                            <span class="bg-gray-100 text-slate-800 border border-slate-300 px-2 py-1 rounded text-xs font-bold">Blanco</span>
+                        </div>
+                        <p class="text-xs text-slate-500">Reglas: Solo 1 por nodo, requiere farol construido, se mueven por conexiones.</p>
+                    </div>
+                </article>
+            </div>
+
+            <article id="2-5">
+                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4"><span class="bg-slate-200 text-slate-600 px-2 py-1 rounded text-sm mr-3">2.5</span> TIPOS DE CARTAS</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="border border-slate-200 p-4 rounded bg-white">
+                        <h4 class="font-bold text-slate-800 text-sm mb-2">🃏 Cartas de Inicio (8)</h4>
+                        <p class="text-xs text-slate-600">Definen estrategia inicial asimétrica. Ej: "Expansión rápida: 2 faroles + 1 luz".</p>
+                    </div>
+                    <div class="border border-indigo-200 p-4 rounded bg-indigo-50">
+                        <h4 class="font-bold text-indigo-900 text-sm mb-2">🧩 Patrones Individuales (8)</h4>
+                        <p class="text-xs text-indigo-800">Visibles, permanentes, 1 vez por jugador. Ej: "Triángulo", "Escalera".</p>
+                    </div>
+                    <div class="border border-emerald-200 p-4 rounded bg-emerald-50">
+                        <h4 class="font-bold text-emerald-900 text-sm mb-2">🌐 Patrones Grupales (6)</h4>
+                        <p class="text-xs text-emerald-800">Competitivos, se consumen, se reponen. Otorga 3PV y un premio grande.</p>
+                    </div>
+                    <div class="border border-purple-200 p-4 rounded bg-purple-50">
+                        <h4 class="font-bold text-purple-900 text-sm mb-2">📜 Cartas de Ritual (6) y Objetivos (8)</h4>
+                        <p class="text-xs text-purple-800">Rituales: Eventos globales disparados por la Reina.<br>Objetivos: Puntuación secreta de fin de partida.</p>
+                    </div>
+                </div>
+            </article>
         </section>
 
-        <!-- BLOQUE 3: SISTEMAS -->
+        <!-- ================= BLOQUE 3 ================= -->
         <section id="bloque3" class="mb-20">
             <div class="flex items-center gap-4 mb-8">
                 <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-2xl border-2 border-emerald-400 text-emerald-700 font-black">3</div>
                 <h2 class="text-2xl md:text-3xl font-black text-slate-900">SISTEMAS Y MECÁNICAS</h2>
             </div>
 
+            <!-- NEW: SETUP SECTION -->
+            <article id="3-0" class="mb-10 bg-amber-50 p-6 rounded-xl border border-amber-200 shadow-sm">
+                <h3 class="text-lg md:text-xl font-bold text-amber-900 mb-4 flex items-center"><span class="bg-amber-200 text-amber-800 px-2 py-1 rounded text-sm mr-3">3.0</span> PREPARACIÓN INICIAL (SETUP)</h3>
+                <ol class="list-decimal pl-5 space-y-3 text-sm text-amber-900 font-medium">
+                    <li>Colocar el tablero central. Situar el token de la <strong class="text-purple-700">Reina en la casilla 1</strong>.</li>
+                    <li>Rellenar el <strong>Mercado</strong> con 8 luciérnagas extraídas al azar de la bolsa.</li>
+                    <li>Revelar <strong class="text-indigo-700">4 Patrones Individuales</strong> (visibles toda la partida).</li>
+                    <li>Revelar <strong class="text-emerald-700">3 Patrones Grupales</strong> en el centro de la mesa.</li>
+                    <li>Entregar 1 Tablero Personal a cada jugador.</li>
+                    <li>Repartir <strong class="text-slate-800">1 Carta de Objetivo Secreto</strong> y <strong class="text-slate-800">1 Carta de Inicio</strong> a cada jugador.</li>
+                    <li>Los jugadores resuelven su carta de inicio (colocando sus primeros faroles, luces y recursos) en orden inverso de turno.</li>
+                </ol>
+            </article>
+
             <!-- DIAGRAMA DE FLUJO VISUAL -->
             <article id="3-1" class="mb-10">
-                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4">3.1 FLUJO COMPLETO DE PARTIDA (El Loop)</h3>
-                
-                <div class="bg-slate-900 p-6 md:p-8 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.2)] overflow-x-auto relative">
+                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4"><span class="bg-slate-200 text-slate-600 px-2 py-1 rounded text-sm mr-3">3.1</span> FLUJO COMPLETO DE PARTIDA (El Loop)</h3>
+                <div class="bg-slate-900 p-6 md:p-8 rounded-2xl shadow-xl overflow-x-auto relative">
                     <h4 class="font-bold text-slate-400 mb-8 text-xs tracking-[0.2em] uppercase border-b border-slate-800 pb-2 text-center">Estructura del Turno</h4>
-                    
                     <div class="flex flex-col md:flex-row justify-between items-center gap-6 min-w-fit px-4">
-                        
-                        <!-- Paso 1 -->
                         <div class="flex flex-col items-center w-24">
                             <div class="w-14 h-14 rounded-full bg-blue-600 flex items-center justify-center text-2xl shadow-[0_0_20px_rgba(37,99,235,0.4)] border-2 border-blue-400 z-10">⚡</div>
                             <span class="text-xs mt-3 font-bold text-blue-200 uppercase tracking-wide">1. P.A.</span>
                             <span class="text-[10px] text-slate-500 text-center mt-1">Gastar Acciones</span>
                         </div>
-                        
-                        <!-- Conector -->
                         <div class="hidden md:block flex-1 h-0.5 bg-slate-700 relative"><div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 border-t-2 border-r-2 border-slate-500 rotate-45"></div></div>
                         <div class="md:hidden w-0.5 h-6 bg-slate-700"></div>
 
-                        <!-- Paso 2 -->
                         <div class="flex flex-col items-center w-24">
                             <div class="w-14 h-14 rounded-xl bg-emerald-600 flex items-center justify-center text-2xl shadow-[0_0_20px_rgba(5,150,105,0.4)] border-2 border-emerald-400 transform rotate-3 z-10">🧩</div>
                             <span class="text-xs mt-3 font-bold text-emerald-200 uppercase tracking-wide">2. Patrones</span>
-                            <span class="text-[10px] text-slate-500 text-center mt-1">Evaluar Tablero</span>
+                            <span class="text-[10px] text-slate-500 text-center mt-1">Evaluar Tablero (Máx 2)</span>
                         </div>
-                        
-                        <!-- Conector -->
                         <div class="hidden md:block flex-1 h-0.5 bg-slate-700 relative"><div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 border-t-2 border-r-2 border-slate-500 rotate-45"></div></div>
                         <div class="md:hidden w-0.5 h-6 bg-slate-700"></div>
 
-                        <!-- Paso 3 -->
                         <div class="flex flex-col items-center w-24">
                             <div class="w-14 h-14 rounded-full bg-purple-600 flex items-center justify-center text-2xl shadow-[0_0_20px_rgba(147,51,234,0.4)] border-2 border-purple-400 z-10">👑</div>
                             <span class="text-xs mt-3 font-bold text-purple-200 uppercase tracking-wide">3. Reina</span>
                             <span class="text-[10px] text-slate-500 text-center mt-1">Avanzar Token</span>
                         </div>
-                        
-                        <!-- Conector -->
                         <div class="hidden md:block flex-1 h-0.5 bg-slate-700 relative"><div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 border-t-2 border-r-2 border-slate-500 rotate-45"></div></div>
                         <div class="md:hidden w-0.5 h-6 bg-slate-700"></div>
 
-                        <!-- Paso 4 -->
                         <div class="flex flex-col items-center w-24">
                             <div class="w-14 h-14 rounded-xl bg-amber-600 flex items-center justify-center text-2xl shadow-[0_0_20px_rgba(217,119,6,0.4)] border-2 border-amber-400 transform -rotate-3 z-10">🌍</div>
                             <span class="text-xs mt-3 font-bold text-amber-200 uppercase tracking-wide">4. Estado</span>
-                            <span class="text-[10px] text-slate-500 text-center mt-1">Resolver Efecto</span>
+                            <span class="text-[10px] text-slate-500 text-center mt-1">Resolver Efectos</span>
                         </div>
                     </div>
                 </div>
             </article>
 
             <div class="grid md:grid-cols-2 gap-8 mb-10">
-                <article id="3-3">
-                    <h3 class="text-lg font-bold text-slate-800 mb-3 border-b-2 border-slate-200 pb-2">3.3 Construcción y Faroles</h3>
-                    <div class="bg-white p-5 rounded-lg border border-slate-200">
-                        <ul class="text-sm space-y-3">
-                            <li class="flex items-start gap-2"><span class="text-red-500 font-bold">⚠️ Regla Crítica:</span> <span>Si un nodo tiene luciérnaga, <strong>NO</strong> se puede construir ni subir de nivel el farol bajo ella.</span></li>
-                            <li class="flex items-start gap-2"><span class="text-amber-500 font-bold">🛡️ Inmunidad:</span> <span>Un farol de <strong>Nivel 3</strong> se vuelve permanente. Nunca puede ser reducido por cartas de la Reina ni rituales.</span></li>
-                        </ul>
+                <article id="3-2">
+                    <h3 class="text-lg font-bold text-slate-800 mb-3 border-b-2 border-slate-200 pb-2">3.2 Acciones Base (PA)</h3>
+                    <div class="bg-slate-100 p-3 rounded text-center font-mono font-bold text-slate-800 mb-4 border border-slate-300 text-sm">
+                        Total P.A. = 3 + Bonus temporales
+                    </div>
+                    <table class="text-sm">
+                        <thead><tr><th>Acción (1 PA c/u)</th><th>Condición</th></tr></thead>
+                        <tbody>
+                            <tr><td>Construir farol</td><td>En nodo vacío</td></tr>
+                            <tr><td>Subir farol</td><td>Sin luciérnaga encima</td></tr>
+                            <tr><td>Colocar luciérnaga</td><td>Sobre un farol construido</td></tr>
+                            <tr><td>Mover luciérnaga</td><td>A nodo conectado</td></tr>
+                        </tbody>
+                    </table>
+                </article>
+                <article id="3-4">
+                    <h3 class="text-lg font-bold text-slate-800 mb-3 border-b-2 border-slate-200 pb-2">3.3 Reglas de Construcción</h3>
+                    <div class="bg-white p-5 rounded-lg border border-slate-200 h-full flex flex-col justify-center gap-4">
+                        <div class="flex items-start gap-3">
+                            <span class="text-red-500 font-bold text-xl">⚠️</span> 
+                            <p class="text-sm text-slate-700"><strong>Regla Crítica:</strong> Si un nodo tiene una luciérnaga instalada, <strong>NO</strong> se puede construir ni subir de nivel el farol bajo ella. La energía bloquea la obra.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-amber-500 font-bold text-xl">🛡️</span> 
+                            <p class="text-sm text-slate-700"><strong>Inmunidad:</strong> Un farol de <strong>Nivel 3</strong> se vuelve permanente. Nunca puede ser reducido por cartas de la Reina ni por rituales.</p>
+                        </div>
                     </div>
                 </article>
+            </div>
 
-                <article id="3-11">
-                    <h3 class="text-lg font-bold text-slate-800 mb-3 border-b-2 border-slate-200 pb-2">3.11 Resolución de Conflictos</h3>
-                    <div class="bg-red-50 p-5 rounded-lg border border-red-100 h-full">
-                        <table class="text-xs w-full">
-                            <tbody>
-                                <tr class="border-b border-red-200"><td class="font-bold py-2 text-red-900">Empate efectos:</td><td class="py-2 text-red-800 text-right">Decide jugador activo</td></tr>
-                                <tr class="border-b border-red-200"><td class="font-bold py-2 text-red-900">Acción imposible:</td><td class="py-2 text-red-800 text-right">Se pierde el PA</td></tr>
-                                <tr><td class="font-bold py-2 text-red-900">Mercado vacío:</td><td class="py-2 text-red-800 text-right">Robar ciego de bolsa</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
+            <div class="grid md:grid-cols-3 gap-6 mb-10">
+                <article id="3-7" class="bg-purple-50 p-5 rounded-lg border border-purple-200">
+                    <h3 class="font-bold text-purple-900 mb-2">3.7 Movimiento Reina</h3>
+                    <p class="text-sm text-purple-800 mb-2">Avanza <strong>1 casilla base</strong> al final del turno.</p>
+                    <p class="text-sm font-bold text-purple-900">Avanza +1 extra (Máx 2):</p>
+                    <ul class="text-xs text-purple-800 list-disc pl-4">
+                        <li>Si el jugador completó un patrón.</li>
+                        <li>Si el jugador construyó un farol Nvl 3.</li>
+                    </ul>
+                </article>
+                <article id="3-10" class="bg-red-50 p-5 rounded-lg border border-red-200">
+                    <h3 class="font-bold text-red-900 mb-2">3.10 Fin de Partida</h3>
+                    <p class="text-sm text-red-800 mb-2"><strong>Activación:</strong> Cuando un jugador alcanza la casilla 60 o más en el track central.</p>
+                    <p class="text-sm text-red-800"><strong>Cierre:</strong> El resto de jugadores tiene 1 turno final, garantizando que todos jueguen la misma cantidad.</p>
+                </article>
+                <article id="3-11" class="bg-slate-100 p-5 rounded-lg border border-slate-300">
+                    <h3 class="font-bold text-slate-800 mb-2">3.11 Casuística General</h3>
+                    <ul class="text-xs text-slate-700 space-y-2">
+                        <li><strong>Empate efectos:</strong> Decide el jugador activo.</li>
+                        <li><strong>Acción imposible:</strong> Si te obligan a hacer algo que no puedes, se pierde el efecto.</li>
+                        <li><strong>Mercado vacío:</strong> Si falta un color al robar, extraes ciegamente de la bolsa.</li>
+                        <li><strong>Patrones simultáneos:</strong> Los ordenas como prefieras.</li>
+                    </ul>
                 </article>
             </div>
         </section>
 
-        <!-- BLOQUE 4: PATRONES ICONOGRÁFICOS -->
+        <!-- ================= BLOQUE 4 ================= -->
         <section id="bloque4" class="mb-20">
             <div class="flex items-center gap-4 mb-8">
                 <div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center text-2xl border-2 border-rose-400 text-rose-700 font-black">4</div>
-                <h2 class="text-2xl md:text-3xl font-black text-slate-900">BASE DE DATOS (PATRONES)</h2>
+                <h2 class="text-2xl md:text-3xl font-black text-slate-900">BASE DE DATOS Y CONTENIDO</h2>
             </div>
 
             <article id="4-2" class="mb-12">
-                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4">4.2 PATRONES INDIVIDUALES (Se usan 4 por partida)</h3>
+                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4">4.2 PATRONES INDIVIDUALES (Detalle Completo)</h3>
+                <p class="text-sm text-slate-600 mb-4">Permanentes. Un jugador solo puede puntuar cada uno 1 vez por partida.</p>
                 
                 <div class="grid md:grid-cols-2 gap-4">
-                    <!-- Patrón 1 -->
-                    <div class="bg-white border border-slate-200 rounded p-4 shadow-sm flex items-start gap-4 transition-shadow hover:shadow-md">
-                        <div class="flex-shrink-0 w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center border border-amber-200">
-                            <svg class="w-6 h-6 text-amber-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99z"/></svg>
-                        </div>
+                    <div class="bg-white border border-slate-200 rounded p-4 shadow-sm flex items-start gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-amber-50 rounded flex items-center justify-center border border-amber-200 text-amber-500 text-xl">🔺</div>
                         <div>
-                            <h4 class="font-bold text-slate-800 mb-1">1. Triángulo Luminoso</h4>
-                            <p class="text-xs mb-1 text-slate-600"><strong>Req:</strong> 3 nodos en triángulo, mismo color.</p>
-                            <p class="text-xs bg-slate-50 p-1.5 mt-2 rounded border border-slate-100 font-mono text-slate-700">Acción: mover 1 rival</p>
+                            <h4 class="font-bold text-slate-800 mb-1 text-sm">1. Triángulo Luminoso</h4>
+                            <p class="text-[11px] mb-1 text-slate-600"><strong>Req:</strong> 3 nodos en triángulo, mismo color. <span class="text-indigo-600 font-bold ml-2">(2 PV)</span></p>
+                            <p class="text-[11px] bg-slate-50 p-1.5 mt-2 rounded border border-slate-100 font-mono text-slate-700">Efecto: Mover 1 luz rival a nodo adyacente.</p>
                         </div>
                     </div>
                     
-                    <!-- Patrón 2 -->
-                    <div class="bg-white border border-slate-200 rounded p-4 shadow-sm flex items-start gap-4 transition-shadow hover:shadow-md">
-                        <div class="flex-shrink-0 w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center border border-blue-200">
-                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16"></path></svg>
-                        </div>
+                    <div class="bg-white border border-slate-200 rounded p-4 shadow-sm flex items-start gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-blue-50 rounded flex items-center justify-center border border-blue-200 text-blue-500 text-xl">➖</div>
                         <div>
-                            <h4 class="font-bold text-slate-800 mb-1">2. Línea Viva</h4>
-                            <p class="text-xs mb-1 text-slate-600"><strong>Req:</strong> 3 nodos en línea, mismo color.</p>
-                            <p class="text-xs bg-slate-50 p-1.5 mt-2 rounded border border-slate-100 font-mono text-slate-700">Acción: mover 2 propias</p>
+                            <h4 class="font-bold text-slate-800 mb-1 text-sm">2. Línea Viva</h4>
+                            <p class="text-[11px] mb-1 text-slate-600"><strong>Req:</strong> 3 nodos en línea recta, mismo color. <span class="text-indigo-600 font-bold ml-2">(2 PV)</span></p>
+                            <p class="text-[11px] bg-slate-50 p-1.5 mt-2 rounded border border-slate-100 font-mono text-slate-700">Efecto: Mover hasta 2 luces propias.</p>
                         </div>
                     </div>
 
-                    <!-- Patrón 3 -->
+                    <div class="bg-white border border-slate-200 rounded p-4 shadow-sm flex items-start gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-emerald-50 rounded flex items-center justify-center border border-emerald-200 text-emerald-600 text-xl">🔗</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 mb-1 text-sm">3. Dúo Resonante</h4>
+                            <p class="text-[11px] mb-1 text-slate-600"><strong>Req:</strong> 2 conectados mismo color (uno Nvl 2+). <span class="text-indigo-600 font-bold ml-2">(2 PV)</span></p>
+                            <p class="text-[11px] bg-slate-50 p-1.5 mt-2 rounded border border-slate-100 font-mono text-slate-700">Efecto: Robar 1 luz del mercado a tu reserva.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-slate-200 rounded p-4 shadow-sm flex items-start gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-orange-50 rounded flex items-center justify-center border border-orange-200 text-orange-600 text-xl">🪜</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 mb-1 text-sm">4. Escalera de Luz</h4>
+                            <p class="text-[11px] mb-1 text-slate-600"><strong>Req:</strong> Nvl 1 conectado a Nvl 2 conectado a Nvl 3. <span class="text-indigo-600 font-bold ml-2">(2 PV)</span></p>
+                            <p class="text-[11px] bg-slate-50 p-1.5 mt-2 rounded border border-slate-100 font-mono text-slate-700">Efecto: Subir 1 farol gratis.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-slate-200 rounded p-4 shadow-sm flex items-start gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-pink-50 rounded flex items-center justify-center border border-pink-200 text-pink-600 text-xl">🌈</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 mb-1 text-sm">5. Encuentro Cromático</h4>
+                            <p class="text-[11px] mb-1 text-slate-600"><strong>Req:</strong> 3 colores distintos conectados. <span class="text-indigo-600 font-bold ml-2">(2 PV)</span></p>
+                            <p class="text-[11px] bg-slate-50 p-1.5 mt-2 rounded border border-slate-100 font-mono text-slate-700">Efecto: Ganar 2 cristales mágicos.</p>
+                        </div>
+                    </div>
+
                     <div class="bg-white border border-slate-200 rounded p-4 shadow-sm flex items-start gap-4 border-l-4 border-l-indigo-400">
-                        <div class="flex-shrink-0 w-12 h-12 bg-indigo-50 rounded-lg flex items-center justify-center border border-indigo-200">
-                            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
-                        </div>
+                        <div class="flex-shrink-0 w-10 h-10 bg-indigo-50 rounded flex items-center justify-center border border-indigo-200 text-indigo-600 text-xl">🏯</div>
                         <div>
-                            <h4 class="font-bold text-slate-800 mb-1">6. Gran Farol Vigía</h4>
-                            <p class="text-xs mb-1 text-slate-600"><strong>Req:</strong> 1 farol nivel 3 con luciérnaga.</p>
-                            <p class="text-xs bg-indigo-50 p-1.5 mt-2 rounded border border-indigo-100 font-bold text-indigo-700 font-mono">Acción: +1 PA Inmediato</p>
+                            <h4 class="font-bold text-slate-800 mb-1 text-sm">6. Gran Farol Vigía</h4>
+                            <p class="text-[11px] mb-1 text-slate-600"><strong>Req:</strong> 1 farol Nvl 3 con luciérnaga. <span class="text-indigo-600 font-bold ml-2">(2 PV)</span></p>
+                            <p class="text-[11px] bg-indigo-50 p-1.5 mt-2 rounded border border-indigo-100 font-bold text-indigo-700 font-mono">Efecto: +1 PA Inmediato (ÚNICO REPETIBLE)</p>
                         </div>
                     </div>
 
-                    <!-- Patrón 4 -->
-                    <div class="bg-slate-800 border border-slate-700 rounded p-4 shadow-sm flex items-start gap-4">
-                        <div class="flex-shrink-0 w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center border border-slate-600">
-                            <span class="text-xl">🌘</span>
-                        </div>
+                    <div class="bg-white border border-slate-200 rounded p-4 shadow-sm flex items-start gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-green-50 rounded flex items-center justify-center border border-green-200 text-green-600 text-xl">🌿</div>
                         <div>
-                            <h4 class="font-bold text-white mb-1">8. Sombra Viva</h4>
-                            <p class="text-xs mb-1 text-slate-400"><strong>Req:</strong> 1 nodo activo conectado a nodo vacío.</p>
-                            <p class="text-xs bg-slate-900 p-1.5 mt-2 rounded border border-slate-700 text-slate-300 font-mono">Acción: invocar desde bolsa</p>
+                            <h4 class="font-bold text-slate-800 mb-1 text-sm">7. Raíz Conectada</h4>
+                            <p class="text-[11px] mb-1 text-slate-600"><strong>Req:</strong> 4 nodos activos conectados libres. <span class="text-indigo-600 font-bold ml-2">(2 PV)</span></p>
+                            <p class="text-[11px] bg-slate-50 p-1.5 mt-2 rounded border border-slate-100 font-mono text-slate-700">Efecto: Subir 1 farol gratis.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-800 border border-slate-700 rounded p-4 shadow-sm flex items-start gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-slate-900 rounded flex items-center justify-center border border-slate-600 text-xl">🌘</div>
+                        <div>
+                            <h4 class="font-bold text-white mb-1 text-sm">8. Sombra Viva</h4>
+                            <p class="text-[11px] mb-1 text-slate-400"><strong>Req:</strong> 1 nodo activo + 1 vacío conectado. <span class="text-indigo-300 font-bold ml-2">(2 PV)</span></p>
+                            <p class="text-[11px] bg-slate-900 p-1.5 mt-2 rounded border border-slate-700 text-slate-300 font-mono">Efecto: Invocar luz ciega de bolsa.</p>
                         </div>
                     </div>
                 </div>
             </article>
 
             <article id="4-3" class="mb-12">
-                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4">4.3 PATRONES GRUPALES (Competitivos)</h3>
-                <div class="bg-emerald-50 border border-emerald-100 p-4 rounded-lg mb-4 text-sm text-emerald-900 flex gap-2">
-                    <span>📌</span>
-                    <span><strong>Regla:</strong> Se revelan 3 al inicio. Quien lo completa gana los puntos, descarta la carta y se repone del mazo.</span>
+                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4">4.3 PATRONES GRUPALES (Detalle Completo)</h3>
+                <div class="bg-emerald-50 border border-emerald-100 p-4 rounded-lg mb-4 text-sm text-emerald-900">
+                    <strong>Regla:</strong> Revelar 3. Quien lo completa gana los puntos, descarta la carta y elige 1 de las 3 opciones de premio. Se repone del mazo automáticamente.
                 </div>
                 <div class="overflow-x-auto bg-white rounded-lg shadow-sm border border-slate-200">
-                    <table class="w-full text-xs md:text-sm min-w-[500px] mb-0">
+                    <table class="w-full text-xs md:text-sm min-w-[600px] mb-0">
                         <thead class="bg-slate-100 border-b border-slate-200">
                             <tr>
-                                <th class="!bg-slate-100 !text-slate-800">Patrón</th>
-                                <th class="!bg-slate-100 !text-slate-800">Requisito</th>
-                                <th class="!bg-slate-100 !text-slate-800 text-center">PV</th>
-                                <th class="!bg-slate-100 !text-slate-800">Premio (Elige 1)</th>
+                                <th class="!bg-slate-100 !text-slate-800 w-1/4">Patrón</th>
+                                <th class="!bg-slate-100 !text-slate-800 w-1/4">Requisito</th>
+                                <th class="!bg-slate-100 !text-slate-800 text-center">Base</th>
+                                <th class="!bg-slate-100 !text-slate-800">Premio (Eliges 1 al completarlo)</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -487,78 +639,141 @@
                                 <td class="font-bold">🌐 Red Ancestral</td>
                                 <td>5 nodos conectados</td>
                                 <td class="font-bold text-indigo-600 text-center bg-indigo-50">3 PV</td>
-                                <td class="text-slate-600">A) Rival pierde 1 luz<br>B) +3 cristales</td>
+                                <td class="text-slate-600 text-xs">A) todos pierden 1 luz<br>B) ganar 3 cristales<br>C) 2 acciones gratis</td>
                             </tr>
                             <tr>
-                                <td class="font-bold">🔳 Cuadrado</td>
-                                <td>4 formando cuadrado</td>
+                                <td class="font-bold">🔳 Cuadrado Sagrado</td>
+                                <td>4 nodos formando cuadrado</td>
                                 <td class="font-bold text-indigo-600 text-center bg-indigo-50">3 PV</td>
-                                <td class="text-slate-600">A) Bloquear 2 rivales<br>B) +4 PV extra</td>
+                                <td class="text-slate-600 text-xs">A) bloquear 2 nodos rivales<br>B) +4 PV extra directos<br>C) colocar 2 luces gratis</td>
                             </tr>
                             <tr>
-                                <td class="font-bold">🌟 Constelación</td>
+                                <td class="font-bold">🌈 Corriente Vital</td>
+                                <td>4 colores distintos conectados</td>
+                                <td class="font-bold text-indigo-600 text-center bg-indigo-50">3 PV</td>
+                                <td class="text-slate-600 text-xs">A) cambiar 2 colores<br>B) +2 cristales +1 PA<br>C) mover 3 luces</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">🏯 Torre Gemela</td>
+                                <td>2 faroles Nvl 3 conectados</td>
+                                <td class="font-bold text-indigo-600 text-center bg-indigo-50">3 PV</td>
+                                <td class="text-slate-600 text-xs">A) +5 PV extra directos<br>B) inmunidad total de tablero 1 ronda<br>C) bajar uno a nivel 2 y ganar +3 PA</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">🔀 Nexo Caótico</td>
+                                <td>Mezcla de colores sin repetir</td>
+                                <td class="font-bold text-indigo-600 text-center bg-indigo-50">3 PV</td>
+                                <td class="text-slate-600 text-xs">A) intercambio global de luces<br>B) mover luces rivales<br>C) activar casilla de Reina inmediatamente</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold text-amber-600">🌟 Constelación Mayor</td>
                                 <td>6 nodos conectados</td>
                                 <td class="font-bold text-indigo-600 text-center bg-indigo-50">3 PV</td>
-                                <td class="text-slate-600">A) +6 PV total<br>B) Duplicar tu patrón individual</td>
+                                <td class="text-slate-600 text-xs">A) +6 PV extra directos<br>B) duplicar patrón individual<br>C) +4 cristales</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </article>
 
+            <div class="grid md:grid-cols-2 gap-8 mb-10">
+                <article id="4-4">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">4.4 Cartas de Ritual (6)</h3>
+                    <ul class="space-y-3">
+                        <li class="bg-white p-3 border border-slate-200 rounded shadow-sm text-sm"><strong class="text-purple-800">🌀 Danza Caótica:</strong> mover 1 propia, mover 1 rival.</li>
+                        <li class="bg-white p-3 border border-slate-200 rounded shadow-sm text-sm"><strong class="text-purple-800">🌬️ Vientos Cambiantes:</strong> intercambio forzoso con jugador a la derecha.</li>
+                        <li class="bg-white p-3 border border-slate-200 rounded shadow-sm text-sm"><strong class="text-purple-800">⚖️ Juicio de la Reina:</strong> Elegir: rival pierde 1 luz O todos pierden 1 nivel.</li>
+                        <li class="bg-white p-3 border border-slate-200 rounded shadow-sm text-sm"><strong class="text-purple-800">🌱 Crecimiento:</strong> subir nivel sacrificando 1 luz.</li>
+                        <li class="bg-white p-3 border border-slate-200 rounded shadow-sm text-sm"><strong class="text-purple-800">🪞 Reflejo:</strong> copiar última acción rival.</li>
+                        <li class="bg-white p-3 border border-slate-200 rounded shadow-sm text-sm"><strong class="text-purple-800">✨ Sendero de Luz:</strong> todos ganan 1 cristal gratis.</li>
+                    </ul>
+                </article>
+                <article id="4-6">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">4.6 Objetivos Secretos (8)</h3>
+                    <table class="text-sm shadow-sm border border-slate-200">
+                        <thead><tr class="bg-slate-100 text-slate-700"><th>Nombre</th><th>Condición Final</th><th>PV</th></tr></thead>
+                        <tbody>
+                            <tr><td>Maestro Cromático</td><td>Tener 5 colores vivos</td><td class="font-bold">5</td></tr>
+                            <tr><td>Arquitecto Supremo</td><td>Tener 3 faroles Nvl 3</td><td class="font-bold">6</td></tr>
+                            <tr><td>Sincronía Perfecta</td><td>Puntuar 4 patrones</td><td class="font-bold">5</td></tr>
+                            <tr><td>Red Viva</td><td>Tener 8 nodos activos</td><td class="font-bold">5</td></tr>
+                            <tr><td>Acumulador</td><td>Terminar con 6 cristales</td><td class="font-bold">4</td></tr>
+                            <tr><td>Equilibrio</td><td>2 luces de cada color (par)</td><td class="font-bold">6</td></tr>
+                            <tr><td>Dominio</td><td>Resolver 2 pat. grupales</td><td class="font-bold">5</td></tr>
+                            <tr><td>Ascensión</td><td>4 faroles nivel 2 o más</td><td class="font-bold">4</td></tr>
+                        </tbody>
+                    </table>
+                </article>
+            </div>
         </section>
 
         <!-- PUNTUACIÓN Y FIN -->
-        <div class="bg-slate-900 text-white p-6 md:p-10 rounded-2xl shadow-xl mt-12 border-b-4 border-amber-400">
-            <h3 class="text-2xl font-black mb-6 flex items-center gap-3">
-                <span class="text-amber-400">🏆</span> PUNTUACIÓN FINAL
+        <div id="5-10" class="bg-slate-900 text-white p-6 md:p-10 rounded-2xl shadow-xl mt-12 border-b-4 border-amber-400 relative overflow-hidden">
+            <div class="absolute right-0 top-0 opacity-10 text-9xl pointer-events-none transform translate-x-10 -translate-y-10">🏆</div>
+            <h3 class="text-2xl md:text-3xl font-black mb-2 flex items-center gap-3 relative z-10">
+                <span class="text-amber-400">5.10</span> PUNTUACIÓN FINAL
             </h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="bg-slate-800 p-4 rounded-lg text-center">
+            <p class="text-slate-400 mb-8 font-medium">Resolución al finalizar el turno de gracia del último jugador.</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 relative z-10">
+                <div class="bg-slate-800 p-4 rounded-xl text-center border border-slate-700">
                     <div class="text-3xl mb-2 text-indigo-400">📍</div>
-                    <div class="text-xs uppercase text-slate-400 tracking-wider">Track Base</div>
-                    <div class="font-bold mt-1">Puntos Directos</div>
+                    <div class="text-[10px] uppercase text-slate-400 tracking-wider">Puntos Directos</div>
+                    <div class="font-bold mt-1 text-sm">Suma del Track</div>
                 </div>
-                <div class="bg-slate-800 p-4 rounded-lg text-center">
+                <div class="flex items-center justify-center text-slate-500 font-bold hidden md:flex">+</div>
+                <div class="bg-slate-800 p-4 rounded-xl text-center border border-slate-700">
                     <div class="text-3xl mb-2 text-amber-400">🏮</div>
-                    <div class="text-xs uppercase text-slate-400 tracking-wider">Faroles Nvl 3</div>
-                    <div class="font-bold mt-1">+3 PV / c.u.</div>
+                    <div class="text-[10px] uppercase text-slate-400 tracking-wider">Faroles Nvl 3</div>
+                    <div class="font-bold mt-1 text-sm">+3 PV por c/u</div>
                 </div>
-                <div class="bg-slate-800 p-4 rounded-lg text-center">
+                <div class="flex items-center justify-center text-slate-500 font-bold hidden md:flex">+</div>
+                <div class="bg-slate-800 p-4 rounded-xl text-center border border-slate-700 md:col-span-1 col-span-2">
                     <div class="text-3xl mb-2 text-rose-400">🌈</div>
-                    <div class="text-xs uppercase text-slate-400 tracking-wider">Colores</div>
-                    <div class="font-bold mt-1">+1 PV / distinto</div>
+                    <div class="text-[10px] uppercase text-slate-400 tracking-wider">Colores Distintos</div>
+                    <div class="font-bold mt-1 text-sm">+1 PV (Máx +6)</div>
                 </div>
-                <div class="bg-slate-800 p-4 rounded-lg text-center">
+                <div class="bg-slate-800 p-4 rounded-xl text-center border border-slate-700">
                     <div class="text-3xl mb-2 text-emerald-400">💎</div>
-                    <div class="text-xs uppercase text-slate-400 tracking-wider">Cristales</div>
-                    <div class="font-bold mt-1">+1 PV cada 2</div>
+                    <div class="text-[10px] uppercase text-slate-400 tracking-wider">Cristales Sueltos</div>
+                    <div class="font-bold mt-1 text-sm">+1 PV cada 2</div>
+                </div>
+                <div class="flex items-center justify-center text-slate-500 font-bold hidden md:flex">+</div>
+                <div class="bg-slate-800 p-4 rounded-xl text-center border border-slate-700">
+                    <div class="text-3xl mb-2 text-purple-400">🎯</div>
+                    <div class="text-[10px] uppercase text-slate-400 tracking-wider">Obj. Secreto</div>
+                    <div class="font-bold mt-1 text-sm">Valor variable</div>
+                </div>
+                <div class="flex items-center justify-center text-white font-black text-2xl hidden md:flex">=</div>
+                <div class="bg-amber-500 text-slate-900 p-4 rounded-xl text-center shadow-[0_0_15px_rgba(245,158,11,0.5)] col-span-2 md:col-span-1">
+                    <div class="text-3xl mb-1">🌟</div>
+                    <div class="font-black text-xl uppercase">Total</div>
                 </div>
             </div>
-            <p class="text-center text-slate-500 mt-6 text-sm">Fin del Game Design Document Oficial.</p>
+            
+            <div class="mt-8 bg-slate-800 p-4 rounded-lg text-sm border-l-4 border-amber-500">
+                <span class="text-amber-400 font-bold">5.11 Empate Final:</span> En caso de empate a puntos, gana el jugador con mayor cantidad de <strong>Faroles de Nivel 3</strong> construidos. Si persiste, se comparte la victoria.
+            </div>
+
+            <p class="text-center text-slate-500 mt-12 text-xs tracking-[0.3em] uppercase">End of Game Design Document</p>
         </div>
 
     </main>
 
     <!-- ================= SCRIPTS ================= -->
     <script>
-        // Lógica de la Portada (Splash Screen)
+        // Lógica Splash Screen
         const splashScreen = document.getElementById('splash-screen');
         const enterBtn = document.getElementById('enter-btn');
         const bodyContainer = document.getElementById('body-container');
 
         enterBtn.addEventListener('click', () => {
-            // Animación de salida de la portada
             splashScreen.classList.add('fade-out');
-            // Desbloquear scroll principal
             bodyContainer.classList.remove('overflow-hidden');
-            // Eliminar del DOM tras animación para no consumir recursos
-            setTimeout(() => {
-                splashScreen.style.display = 'none';
-            }, 600);
+            setTimeout(() => { splashScreen.style.display = 'none'; }, 600);
         });
 
-        // Lógica del Menú Lateral Móvil
+        // Lógica Sidebar Móvil
         const menuBtn = document.getElementById('menu-btn');
         const closeBtn = document.getElementById('close-sidebar-btn');
         const sidebar = document.getElementById('sidebar');
@@ -576,7 +791,6 @@
             sidebar.classList.add('-translate-x-full');
             overlay.classList.add('opacity-0');
             setTimeout(() => overlay.classList.add('hidden'), 300);
-            // Solo devolvemos el scroll si la portada ya no está activa
             if(splashScreen.style.display === 'none') {
                 document.body.classList.remove('overflow-hidden');
             }
@@ -586,12 +800,9 @@
         closeBtn.addEventListener('click', closeSidebar);
         overlay.addEventListener('click', closeSidebar);
 
-        // Auto-cierre al hacer tap en un enlace del móvil
         sidebarLinks.forEach(link => {
             link.addEventListener('click', () => {
-                if (window.innerWidth < 1024) { 
-                    closeSidebar();
-                }
+                if (window.innerWidth < 1024) closeSidebar();
             });
         });
     </script>
